@@ -1,1 +1,1 @@
-This is the read me file
+[![Build Status](https://travis-ci.org/40338716/sem.svg?branch=master)](https://travis-ci.org/40338716/sem)
