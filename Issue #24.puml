@@ -1,0 +1,23 @@
+@startuml
+
+actor BA as "Business Analyst"
+
+rectangle Database
+
+rectangle "Population System" {
+    usecase UC24 as "Get population by languages"
+
+    usecase UCa as "Print languages"
+
+    BA - UC24
+    UC24..> UCa : include
+    UC4 - Database
+
+}
+
+@enduml
+
+
+
+As a business analyst, I can run reports to provide the required information
+of the population in the world who can speak certain languages
