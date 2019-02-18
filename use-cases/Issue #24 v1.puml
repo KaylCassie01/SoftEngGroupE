@@ -1,0 +1,20 @@
+@startuml
+
+actor BA as "Business Analyst"
+
+rectangle Database
+
+rectangle "Population System" {
+    usecase UC4 as "Get population by languagues"
+
+
+    usecase UCa as "Print languages"
+
+    BA - UC4
+    UC4 ..> UCa : include
+    UC4 - Database
+}
+
+@enduml
+
+
