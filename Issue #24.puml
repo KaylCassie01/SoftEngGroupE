@@ -11,7 +11,7 @@ rectangle "Population System" {
 
     BA - UC24
     UC24..> UCa : include
-    UC4 - Database
+    UC4 - Database 
 
 }
 
