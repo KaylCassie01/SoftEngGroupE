@@ -5,7 +5,7 @@ actor BA as "Business Analyst"
 rectangle Database
 
 rectangle "Population System" {
-    usecase UC4 as "Get population by languagues"
+    usecase UC4 as "Get population by languages"
 
 
     usecase UCa as "Print languages"
