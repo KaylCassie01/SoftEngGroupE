@@ -1,0 +1,42 @@
+USE CASE: 4 Produce a Report of the population in the world who can speak certain languages
+
+CHARACTERISTIC INFORMATION
+Goal in Context
+As a business analyst, I can run reports to provide the required information of the population in the world who can speak certain languages
+
+Scope
+Company.
+
+Level
+Primary task.
+
+Preconditions
+We know the country. Database contains current language data.
+
+Success End Condition
+A report is available for End User.
+
+Failed End Condition
+No report is produced.
+
+Primary Actor
+Business Analyst.
+
+Trigger
+A request for of the population in the world who can speak certain languages
+
+MAIN SUCCESS SCENARIO
+End user requests information on populations in the world who can speak certain languages
+BA Analyst captures name of the country to get language information for.
+BA Analyst extracts current language information of all countries.
+BA Analyst provides report to end user.
+
+EXTENSIONS
+Language does not exist for requested country:
+BA Analyst informs end user language does not exist.
+
+SUB-VARIATIONS
+None.
+
+SCHEDULE
+DUE DATE: Release 1.0
