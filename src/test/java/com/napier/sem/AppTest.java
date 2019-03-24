@@ -18,7 +18,16 @@ public class AppTest {
 
     @Test
     void printCountriesTestNull() {
-        app.printSalaries(null);
+        app.printCountries(null);
     }
-}
 
+
+
+    @Test
+    void printCountriesTestEmpty() {
+        ArrayList<Country> countries = new ArrayList<Country>();
+        app.printCountry(countries);
+    }
+
+
+}

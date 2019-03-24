@@ -18,11 +18,13 @@ public class AppIntegrationTest {
     }
 
     @Test
-    void testGetEmployee() {
-        Employee emp = app.getEmployee(255530);
-        assertEquals(emp.emp_no, 255530);
-        assertEquals(emp.first_name, "Ronghao");
-        assertEquals(emp.last_name, "Garigliano");
+    void testGetCountry() {
+        Country Country = app.getID(1);
+        assertEquals(Country.name, "Kabul");
+        assertEquals(Country.country_code, "AFG");
+        assertEquals(Country.district, "Kabol");
+        assertEquals(Country.population, "1780000");
+
     }
 }
 

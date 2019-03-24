@@ -28,6 +28,20 @@
     <build>
     <plugins>
     <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+            <finalName>seMethods</finalName>
+            <archive>
+                <manifest>
+                    <mainClass>com.napier.sem.App</mainClass>
+                </manifest>
+            </archive>
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+        
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>2.3.1</version>
