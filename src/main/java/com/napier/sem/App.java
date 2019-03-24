@@ -12,17 +12,21 @@ public class App
 
         // Connect to database
         if (args.length < 1) {
-            a.connect("localhost:33060");
+            a.connect("localhost:3306");
         } else {
             a.connect(args[0]);
         }
 
-        Department dept = a.getDepartment("Sales");
-        ArrayList<Employee> employees = a.getSalariesByDepartment(dept);
+        //Department dept = a.getDepartment("Sales");
+        //ArrayList<Employee> employees = a.getSalariesByDepartment(dept);
 
-        // Print salary report
-        a.printSalaries(employees);
+        // Print Countries report
+        //a.printCountries(name);
 
+        // Disconnect from database
+        a.disconnect();
+    }
+    
 //        void printCountries(ArrayList<Country> countries) {
 //            // Check countries is not null
 //            if (countries == null) {
@@ -40,33 +44,28 @@ public class App
 //            }
 //        }
 
-        /**
-         * Prints countries.
-         *
-         * @param countries countries to print.
-         */
-        void printCountries(ArrayList<Country> countries) {
-            if (countries != null) {
-                System.out.println(String.format("%-10s %-15s %-20s", "Name", "Continent", "Population"));
-                for (Country country : countries) {
-                    if (country == null) {
-                        continue;
-                    }
-                    String formatted_string =
-                            String.format("%-10s %-15s %-20s",
-                                    country.Name, country.Continent, country.Population);
-                    System.out.println(formatted_string);
+    /**
+     * Prints countries.
+     *
+     * @param countries countries to print.
+     */
+    void printCountries(ArrayList<Country> countries){
+        if (countries != null) {
+            System.out.println(String.format("%-10s %-15s %-20s", "Name", "Continent", "Population"));
+            for (Country country : countries) {
+                if (country == null) {
+                    continue;
                 }
-            } else {
-                System.out.println("No countries");
+                String formatted_string =
+                        String.format("%-10s %-15s %-20s",
+                                country.Name, country.Continent, country.Population);
+                System.out.println(formatted_string);
             }
+        } else {
+            System.out.println("No countries");
         }
-
-
-
-        // Disconnect from database
-        a.disconnect();
     }
+
     public void connect(String location)
     {
         try
