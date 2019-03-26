@@ -12,7 +12,7 @@ public class App
 
         // Connect to database
         if (args.length < 1) {
-            a.connect("localhost:3306");
+            a.connect("localhost:33060");
         } else {
             a.connect(args[0]);
         }
@@ -26,23 +26,39 @@ public class App
         // Disconnect from database
         a.disconnect();
     }
-    
-//        void printCountries(ArrayList<Country> countries) {
-//            // Check countries is not null
-//            if (countries == null) {
-//                System.out.println("No countries");
-//                return;
-//            }
-//            // Print header
-//            System.out.println(String.format("%-10s %-15s %-20s %-8s", "ID", "Name", "CountryCode", "District", "Population"));
-//
-//            for (Country emp : countries) {
-//                String emp_string =
-//                        String.format("%-10s %-15s %-20s %-8s",
-//                                emp.id, emp.name, emp.country_code, emp.district, emp.population);
-//                System.out.println(emp_string);
-//            }
-//        }
+
+    Country getCountry (String ID) {
+
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT country.Code, country.Name "
+                            + "FROM country "
+                            + "WHERE country.Code = '" + ID + "'";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            if (rset.next())
+            {
+                Country myCountry = new Country();
+                myCountry.code = rset.getString("Code");
+                myCountry.name = rset.getString("Name");
+                return myCountry;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
 
     /**
      * Prints countries.
@@ -58,7 +74,7 @@ public class App
                 }
                 String formatted_string =
                         String.format("%-10s %-15s %-20s",
-                                country.Name, country.Continent, country.Population);
+                                country.name, country.continent, country.population);
                 System.out.println(formatted_string);
             }
         } else {

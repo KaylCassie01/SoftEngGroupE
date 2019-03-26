@@ -14,16 +14,16 @@ public class AppIntegrationTest {
     @BeforeAll
     static void init() {
         app = new App();
-        app.connect("localhost:3306");
+        app.connect("localhost:33060");
     }
 
     @Test
     void testGetCountry() {
-        Country Country = app.getID(1);
-        assertEquals(Country.name, "Kabul");
-        assertEquals(Country.country_code, "AFG");
-        assertEquals(Country.district, "Kabol");
-        assertEquals(Country.population, "1780000");
+        Country mycountry = app.getCountry("ABW");
+        assertEquals(mycountry.name, "Aruba");
+     //  assertEquals(mycountry.code, "AFG");
+       // assertEquals(mycountry.region, "Kabol");
+       // assertEquals(mycountry.population, "1780000");
 
     }
 }
