@@ -9,3 +9,8 @@ services:
     build: db/.
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+
+  FROM openjdk:latest
+  COPY ./target/seMethods.jar /tmp
+  WORKDIR /tmp
+  ENTRYPOINT ["java", "-jar", "seMethods.jar", "db:3306"]
