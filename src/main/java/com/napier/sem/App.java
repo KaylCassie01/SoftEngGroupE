@@ -136,4 +136,39 @@ public class App
         }
     }
 
+
+    /** The population of the world. */
+    public ArrayList<Country> worldPopulation() {
+        return null;
+    }
+
+    /** The population of a continent. */
+    public ArrayList<Country> continentPopulation(String continent) {
+        return null;
+    }
+
+    /** The population of a region. */
+
+    public ArrayList<Country> regionPopulation(String region) {
+        return null;
+    }
+
+    /** The population of a country. */
+
+    public ArrayList<Country> countryPopulation(String country) {
+        return null;
+    }
+
+    /** The population of a district. */
+
+    private ArrayList<Country> districtPopulation(String district) {
+        return null;
+    }
+
+    /** The population of a city */
+
+    public ArrayList<Country> cityPopulation(String city) {
+        return null;
+    }
+
 }
